@@ -19,7 +19,7 @@ Without `.env.local` the app runs on that one device, with no accounts.
 
 ## Hosting
 
-Every push to `main` builds and deploys to GitHub Pages (`.github/workflows/deploy.yml`). The build reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` from the repository's Actions variables.
+Hosted on Vercel at https://planner-2026-livid.vercel.app. Every push to `main` deploys automatically. `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set in the Vercel project's Environment Variables.
 
 ## How sync works
 
