@@ -14,6 +14,11 @@ create table if not exists public.records (
 
 create index if not exists records_user_server_ts on public.records (user_id, server_ts);
 
+-- Signed-in users may use the table (newer projects don't grant this automatically);
+-- the row-level security below still limits each person to their own rows.
+grant select, insert, update, delete on public.records to authenticated;
+revoke all on public.records from anon;
+
 -- Each person can only ever see and change their own rows.
 alter table public.records enable row level security;
 
